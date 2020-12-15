@@ -1,0 +1,16 @@
+{
+  "name": "docker-express-api",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "A docker tutorial",
+  "main": "app.js",
+  "scripts": {
+    "start": "node --es-module-specifier-resolution=node src/app.js"
+  },
+  "author": "Al Javier",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "mariadb": "^2.5.2"
+  }
+}

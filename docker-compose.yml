@@ -1,0 +1,31 @@
+version: "3"
+services: 
+  node:
+    image: alphonso/docker-express-api
+    container_name: express-api
+    ports:
+      - "8000:8000"
+    networks:
+      - docker-service
+    depends_on: 
+      - mariadb
+
+  mariadb:
+    image: mariadb:latest
+    container_name: docker-mariadb
+    ports:
+      - "3306:3306"
+    environment: 
+      MYSQL_ROOT_PASSWORD: "password"
+    networks:
+      - docker-service
+    volumes:
+      - maria-data:/data/db
+
+networks:
+  docker-service:
+    driver: bridge
+
+volumes:
+  maria-data:
+    driver: local
